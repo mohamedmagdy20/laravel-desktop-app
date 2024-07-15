@@ -22,23 +22,21 @@
                     <input type="text" class="form-control"  value="{{old('place',$data->place)}}" name="place">
                 </div>
                 <div class="col-md-6">
-                    <label for="" class="p-1">التاريخ <span style="color: red">*</span></label>
-                    <input type="date" name="date" value="{{old('date',$data->date)}}"  class="form-control" id="">
+                  <label for="" class="p-1">التاريخ <span style="color: red">*</span></label>
+                  <input type="date" name="date" id="date" onchange="getDayName()"  value="{{old('date',$data->date)}}" required class="form-control" id="">
+                  @error('date')
+                  <span style="color: red">{{$message}}</span>
+                  @enderror
                 </div>
 
-                <div class="col-md-6">
-                    <label for="" class="p-1">اليوم <span style="color: red">*</span></label>
-                    <select name="day" class="form-select"  id="">
-                        <option {{old('day',$data->day == 'السبت' ? 'selected' : '')}} value="السبت">السبت</option>
-                        <option {{old('day',$data->day == 'الاحد' ? 'selected' : '')}} value="الاحد">الاحد</option>
-                        <option {{old('day',$data->day == 'الاثنين' ? 'selected' : '')}} value="الاثنين">الاثنين</option>
-                        <option {{old('day',$data->day == 'الثلاثاء' ? 'selected' : '')}} value="الثلاثاء">الثلاثاء</option>
-                        <option {{old('day',$data->day == 'الاربعاء' ? 'selected' : '')}} value="الاربعاء">الاربعاء</option>
-                        <option {{old('day',$data->day == 'الخميس' ? 'selected' : '')}} value="الخميس">الخميس</option>
-                        <option {{old('day',$data->day == 'الجمعة' ? 'selected' : '')}} value="الجمعة">الجمعة</option>
-                    </select>
+              <div class="col-md-6">
+                  <label for="" class="p-1">اليوم <span style="color: red">*</span></label>
+                  <input type="text" id="day" name="day" value="{{old('day',$data->day)}}" disabled  class="form-control">
+                  @error('day')
+                  <span style="color: red">{{$message}}</span>
+                  @enderror
                 </div>
-    
+  
               <div class="col-md-6">
                 <div class="form-group">
                   <label for="to" class="p-1">سعة من</label>
@@ -60,7 +58,7 @@
               </div>
               <div class="col-md-12 mt-4">
                 <div class="form-group text-center">
-                  <button type="submit" class="btn btn-primary"> <i class="fa fa-plus"></i> تسجيل</button>
+                  <button type="submit" class="btn btn-primary"> <i class="fa fa-pen"></i> تعديل</button>
                 </div>
               </div>
               </div>
@@ -70,3 +68,23 @@
     
 </div>
 @endsection
+<script>
+
+  function getDayName()
+  {
+    let dateInput = document.getElementById('date').value;
+    let daySelect = document.getElementById('day');
+    if (dateInput) {
+        var date = new Date(dateInput);
+
+        day = date.toLocaleDateString('ar', { weekday: 'long' });
+        console.log(day);
+        daySelect.value = day;
+        document.getElementById('day').disabled = false;
+
+
+    } else {
+        alert("Please select a date.");
+    }
+  }
+</script>
