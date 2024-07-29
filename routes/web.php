@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CommitmentController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\OfficerControlller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,10 @@ Route::get('commitment/edit/{id}',[CommitmentController::class,'edit'])->name('e
 Route::get('commitment/delete/{id}',[CommitmentController::class,'delete'])->name('delete');
 Route::post('commitment/store',[CommitmentController::class,'store'])->name('store');
 Route::post('commitment/update/{id}',[CommitmentController::class,'update'])->name('update');
+
+
+Route::get('officers',[OfficerControlller::class,'index'])->name('officers.index');
+Route::get('officers/delete/{id}',[OfficerControlller::class,'delete'])->name('officers.delete');
+Route::get('officers/create',[OfficerControlller::class,'create'])->name('officers.create');
+Route::post('officers/store',[OfficerControlller::class,'store'])->name('officers.store');
+

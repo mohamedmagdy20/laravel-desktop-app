@@ -9,6 +9,8 @@ class Officer extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'code',
+        'senority',
         'name',
         'department_id',
         'degree_id',

@@ -17,7 +17,6 @@ class CommitmentController extends Controller
     }
     public function index(Request $request)
     {
-        
         $today = Carbon::today();
         $todayCommitment = $this->model->whereDate('date',$today)->get();
         $data  = $this->model->whereDate('date','!=',$today)->filter($request->all())->orderBy('date','asc')->get();
