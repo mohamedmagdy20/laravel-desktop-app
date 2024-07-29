@@ -5,7 +5,7 @@
 <div class="container">
     <div class="card mt-3 shadow-sm p-1 bg-white rounded">
         <div class="card-body">
-          <form action="{{route('officers.update',$data->id)}}" method="POST" >
+          <form action="{{route('non.update',$data->id)}}" method="POST" >
             @csrf
             <div class="row">
               <div class="col-md-12">
@@ -19,7 +19,7 @@
               </div>
 
 
-              <div class="col-md-6">
+              <div class="col-md-12">
                 <div class="form-group">
                   <label for="">رقم العسكري</label>
                   <input type="text" name="code" value="{{old('code',$data->code)}}" class="form-control">
@@ -29,15 +29,6 @@
                   @enderror
               </div>
 
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="">رقم الاقدمية</label>
-                  <input type="text" name="senority"  value="{{old('code',$data->senority)}}"class="form-control">
-                </div>
-                @error('senority')
-                    <span style="color: red">{{$message}}</span>
-                  @enderror
-              </div>
                  <div class="col-md-6 mb-4">
                   <div class="form-group">
                   <label for="">الرتبة</label>

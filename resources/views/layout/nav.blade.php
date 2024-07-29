@@ -9,7 +9,7 @@
       <div class="collapse navbar-collapse" id="navbarScroll">
         <ul class="navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
           <li class="nav-item">
-            <a class=" btn btn-outline-light shadow  rounded" style="font-size: 30px" >إلتزامات السيد رئيس أركان المشاة</a>
+            <a class=" btn btn-outline-light shadow  rounded" style="font-size: 30px" >@yield('title')</a>
           </li>
         </ul>
         <img src="{{asset('image/logo2.png')}}" alt="" width="150" height="80" class="d-inline-block align-text-top">

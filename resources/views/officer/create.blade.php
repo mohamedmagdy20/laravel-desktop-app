@@ -1,4 +1,6 @@
 @extends('layout.app')
+@section('title','بيانات ظباط الادارة')
+
 @section('content')
 <div class="container">
     <div class="card mt-3 shadow-sm p-1 bg-white rounded">

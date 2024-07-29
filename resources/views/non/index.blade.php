@@ -1,5 +1,5 @@
 @extends('layout.app')
-@section('title','بيانات ظباط الادارة')
+@section('title','بيانات ضباط الصف الادارة')
 @section('css')
 <link rel="stylesheet" href="{{asset('datatable/css/dataTables.bootstrap5.min.css')}}">
 <style>
@@ -15,7 +15,7 @@
   <div class="card mt-3 shadow-sm p-1 bg-white rounded">
     <div class="row">
       <div class="col-md-3">
-        <a href="{{route('officers.create')}}" class="btn btn-info"><i class="fa fa-plus"></i> اضافة سجل</a>
+        <a href="{{route('non.create')}}" class="btn btn-info"><i class="fa fa-plus"></i> اضافة سجل</a>
         {{-- <a href="{{route('officers.import.view')}}" class="btn btn-success"><i class="fa fa-sheet-plastic"></i> اضافة ملف</a> --}}
       
       </div>
@@ -68,7 +68,6 @@
               <tr>
                 <th>م</th>
                 <th >الرقم العسكري</th>
-                <th >رقم الاقدمية</th>
                 <th style="padding-left: 60px ; padding-right: 60px">الاسم</th>
                 <th style="padding-left: 60px ; padding-right: 60px">الرتبة</th>
                 <th style="padding-left: 60px ; padding-right: 60px">الوظيفة</th>
@@ -88,7 +87,6 @@
              <tr>
               <td>{{$index+1}}</td>
               <td>{{$item->code}}</td>
-              <td>{{$item->senority}}</td>
 
               <td  style="width:200 !important;">{{$item->name}}</td>
               <td>{{optional($item->degree)->name}}</td>
@@ -111,8 +109,8 @@
               @endif
               <td>{{$item->note}}</td>
               <td>
-                <a href="{{route('officers.edit',$item->id)}}" class="btn btn-secondary btn-sm" ><i class="fa-solid fa-pen"></i></a> <!-- Update icon -->
-                <a href="{{route('officers.delete',$item->id)}}" class="btn btn-danger btn-sm deletebtn" ><i class="fa fa-trash"></i></a> <!-- Delete icon -->												
+                <a href="{{route('non.edit',$item->id)}}" class="btn btn-secondary btn-sm" ><i class="fa-solid fa-pen"></i></a> <!-- Update icon -->
+                <a href="{{route('non.delete',$item->id)}}" class="btn btn-danger btn-sm deletebtn" ><i class="fa fa-trash"></i></a> <!-- Delete icon -->												
               </td>
             </tr>
               @endforeach

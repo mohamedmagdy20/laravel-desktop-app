@@ -16,6 +16,13 @@
     </div>
     <ul>
       
+      <li>
+        <a href="{{route('index')}}">
+          <i style="margin-right:8px" class="fa fa-home"></i>
+          <span class="nav-item">الرئيسية </span>
+        </a>
+        <span class="tooltip">الرئيسية</span>
+      </li>
   
       <li>
         <a href="{{route('commitment')}}">
@@ -32,31 +39,18 @@
         </a>
         <span class="tooltip">ضباط</span>
       </li>
-  
+
       <li>
-        <a href="#">
-          <i class="fa fa-box"></i>
-          <span class="nav-item">Products</span>
+        <a href="{{route('non.index')}}">
+          <i style="margin-right:8px" class="fa-solid fa-person-military-rifle"></i>
+          <span class="nav-item">صف ظباط</span>
         </a>
-        <span class="tooltip">Products</span>
+        <span class="tooltip">ضباط</span>
       </li>
   
-      <li>
-        <a href="#">
-          <i class="fa fa-orcid"></i>
-          <span class="nav-item">Order</span>
-        </a>
-        <span class="tooltip">Order</span>
-      </li>
+      
   
   
-      <li>
-        <a href="#">
-          <i class="fa fa-person"></i>
-          <span class="nav-item">Customer</span>
-        </a>
-        <span class="tooltip">Customer</span>
-      </li>
     </ul>
   </div>
   
